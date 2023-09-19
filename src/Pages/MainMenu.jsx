@@ -48,7 +48,7 @@ function MainMenu() {
             </h1>
             <div className="mt-8 text-1xl ">
               we are her to serve to childern <br /> that they need for help ,
-              and we need for yoour help also <br />
+              and we need for your help also <br />
               <button className=" mt-4   h-10 text-white hover:bg-sky-700  bg-teal-950">
                 Donate Now
               </button>
