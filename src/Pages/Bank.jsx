@@ -58,7 +58,7 @@ function Bank() {
                 w-96 border-4 pt-3 bg-accent-2 border-amber-50 rounded-xl`}
               >
                 <Link to="/bankslip">
-                  <h1 className=" text-xl font-semibold flex justify-between">
+                  <h1 className=" text-xl font-semibold flex justify-center">
                     Islamic Bank of Afghanistan
                   </h1>
                   <div className="mx-14 my-4">
