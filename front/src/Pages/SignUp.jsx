@@ -2,10 +2,37 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function SignUp() {
   const [donar, donarLog] = useState(false);
   const [page, setPage] = useState(0);
+  const [donarField, setDonarField]= useState({
+    fullname: "",
+    email:"",
+    password:""
+  });
+  const ChangeDonarhandler = (e)=>{
+    setDonarField({
+      ...donarField,
+      [e.target.name]: e.target.value
+    });
+    console.log(donarField);
+  }
+  const [loading, setLoading] = useState();
+  const onSubmitchange = async (e)=>{
+    e.preventDefault();
+    try{
+      const response = await axios.post("http://127.0.0.1:8000/api/add/", donarField);
+      console.log(response);
+      setLoading(true);
+    } catch (err){
+    console.log("something went wrong");
+    }
+  }
+  if(loading){
+    return<Donorlist/>
+  }
 
   return (
     <div className="relative bg-backgorund">
@@ -88,26 +115,33 @@ function SignUp() {
             <p className="pl-2 font-semibold">Sign-up as Teacher</p>
           </div>
         </div>
-        <div className="flex justify-center pt-4 mb-16  ">
+      <div className="flex justify-center pt-4 mb-16  ">
           {page == 1 && (
+// donrafrom            
             <form action="" className=" w-96 bg-backgorund">
               <input
                 type="text"
                 className="block border bg-backgorund border-black w-full p-3 rounded mb-1"
                 name="fullname"
                 placeholder="Full Name"
+                onChange={e => ChangeDonarhandler(e)}
+
               />
               <input
-                type="text"
+                type="email"
                 className="block border bg-backgorund border-black w-full p-3 rounded mb-1"
                 name="email"
                 placeholder="Email"
+                onChange={e => ChangeDonarhandler(e)}
+
               />
               <input
                 type="password"
                 className="block border bg-backgorund border-black w-full p-3 rounded mb-1"
                 name="password"
                 placeholder="Password"
+                onChange={e => ChangeDonarhandler(e)}
+
               />
               <input
                 type="password"
@@ -116,7 +150,9 @@ function SignUp() {
                 placeholder="Confirm Password"
               />
               <Link to="/pending">
-                <button className="  w-96  h-10 text-white  hover:bg-sky-700  bg-primary  ">
+                <button className="  w-96  h-10 text-white  hover:bg-sky-700  bg-primary  "
+                onClick={e => onSubmitchange(e)}
+                >
                   {" "}
                   sign up
                 </button>
@@ -129,6 +165,8 @@ function SignUp() {
               </button>
             </form>
           )}
+
+{/* //enddoar form */}
           {page == 2 && (
             <form action="" className=" bg-backgorund w-96">
               <input

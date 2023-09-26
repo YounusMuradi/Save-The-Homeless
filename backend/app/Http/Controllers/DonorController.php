@@ -17,6 +17,7 @@ class DonorController extends Controller
         ]);
     }
     public function store(DonorStoreRequest $request){
+     
       try{
         Donor::create([
           'fullname' => $request->fullname,
@@ -43,7 +44,7 @@ class DonorController extends Controller
        } 
 
        return response()->json([
-        'result'=> $donor
+        'results'=> $donor
        ],200);
 
     }
@@ -68,7 +69,7 @@ class DonorController extends Controller
        }
       
     }
-    public function delete(DonorStoreRequest $id){
+    public function delete($id){
       $donor = Donor::find($id);
 
        if(!$donor){

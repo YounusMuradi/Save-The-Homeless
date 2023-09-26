@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 function Donorlist() {
   const [data, setData] = useState([]);
@@ -14,20 +15,31 @@ function Donorlist() {
       const { data } = await axios.get(
         'http://127.0.0.1:8000/api/donors'
       );
-      setData(data);
-      setLoading(false);
+
+      
+      setData(data.results);
+      setLoading(true);
     };
 
     fetchData();
   }, []);
-
+  const handleDelete =async(id)=>{
+    console.log(id);
+    await axios.delete("http://127.0.0.1:8000/api/deletedonor/"+id);
+    const newdonordata = data.filter((item)=>{
+      return(
+        item.id !==id
+      )
+    })
+    setData (newdonordata);
+  }
   return (
     <div className="relative bg-backgorund">
       <Header />
       <section className="">
         <div className="flex relative flex-row items-stretch justify-center  pt-12 pb-2 ">
           <div className="  text-3xl font-bold text-true-gray-800">
-            Student List
+            Donar List
           </div>
           <br />
 
@@ -47,6 +59,10 @@ function Donorlist() {
                 <table class="min-w-full w-full text-left border border-black  rounded-sm text-sm font-light">
                   <thead class="border-b  font-medium dark:border-neutral-500">
                     <tr>
+
+                      <th scope="col" class="px-6 py-4">
+                        D No.
+                      </th>
                       <th scope="col" class="px-6 py-4">
                         Fullname
                       </th>
@@ -54,13 +70,32 @@ function Donorlist() {
                         email
                       </th>
                       <th scope="col" class="px-6 py-4">
-                        password
+                        Action
                       </th>
                     
                     </tr>
                   </thead>
                   <tbody>
-                    {loading ? (
+                     {
+                      data.map((donor, i)=>{
+                        return (
+                          <tr key={i} class="border-b dark:border-neutral-500">
+                            <td class="whitespace-nowrap px-6 py-4 font-medium">{i +1}</td>
+                            <td class="whitespace-nowrap px-6 font-bold  py-4">{donor.fullname}</td>
+                            <td class="whitespace-nowrap font-bold  px-6 py-4">{donor.email}</td>
+                            <td class="whitespace-nowrap font-bold  px-6 py-4">
+                            <Link to ={`/view/${donor.id}`} className="btn btn-success mx-2">view</Link> 
+                            <Link to ={`/edit/${donor.id}`} className="btn btn-info mx-2">edit</Link> 
+                            <button onClick={()=>handleDelete(donor.id)} className="btn btn-danger mx-2">delete</button> 
+
+                            </td>
+                            
+                          </tr>
+                        )
+                      })
+                     }
+
+                    {/* {loading ? (
                       <p className="text-4xl  my-9 font-bold ml-[450px] ">
                         Loaidng ...
                       </p>
@@ -85,7 +120,7 @@ function Donorlist() {
                           </tr>
                         )
                       )
-                    )}
+                    )} */}
 
                     {/* <tr class="border-b dark:border-neutral-500">
                       <td class="whitespace-nowrap px-6 py-4 font-medium"></td>

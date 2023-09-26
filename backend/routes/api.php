@@ -23,3 +23,4 @@ Route::get('donors/{id}',[DonorController::class,'show']);
 Route::post('add',[DonorController::class, 'store']);
 Route::put('donoerupdate/{id}',[DonorController::class, 'update']);
 Route::delete('deletedonor/{id}',[DonorController::class, 'delete']);
+
