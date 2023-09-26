@@ -12,6 +12,7 @@ import LoginPage from "./Pages/LoginPage";
 import Login from "./Pages/Login";
 import Doantate from "./components/Doantate";
 import MainMenu from "./Pages/MainMenu";
+import Donorlist from "./Pages/Donorlist";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/pending" element={<Pending />} />
         <Route path="/donatate" element={<Doantate />} />
+        <Route path="/donar" element={<Donorlist />} />
       </Routes>
       {/* <Pending /> */}
       {/* <Login /> */}
