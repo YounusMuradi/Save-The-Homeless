@@ -38,7 +38,7 @@ function Bank() {
                 className={`h-40
               
                 w-96 border-text-color pt-3 ${
-                  page == 1 && "bg-accent-2"
+                  page == 1 && "bg-accent-3"
                 } bg-accent-2 rounded-sm`}
               >
                 <Link to="/bankslip">
