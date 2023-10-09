@@ -43,13 +43,13 @@ function MainMenu() {
             <h1 className=" text-8xl  font-bold pl-10  mr-20">
               Fundraising For The <br /> People <br />
             </h1>
-            <h1 className="text-8xl pl- mt-8 text-secondary outline-offset-1 font-semibold">
-              You care <br />
+            <h1 className=" pl- mt-8 text-secondary outline-offset-1 font-semibold">
+              <img className="ml-96 mt-10" src="Telegram/You.svg" alt="" />
             </h1>
             <div className="mt-8 text-1xl ">
               we are here to serve to childern <br /> that they need for help ,
               and we need for your help also <br />
-              <button className=" mt-4   h-10 text-white hover:bg-sky-700  bg-teal-950">
+              <button className=" mt-4  w-36 rounded-sm h-10 text-white hover:bg-sky-700  bg-teal-950">
                 Donate Now
               </button>
             </div>
@@ -68,12 +68,12 @@ function MainMenu() {
       </div>
       <div className="flex w-full h-[450px] relative bg-accent-1 mb-12">
         <div>
-          <h1 className=" text-3xl font-semibold text-white mt-8 ml-12">
+          <h1 className=" text-3xl font-semibold text-white mt-8 ml-[60px]">
             The Mission And <br />
             Goals Of Our <br />
             Organization.
           </h1>
-          <p className="text-white font-semibold opacity-95 w-[700px] my-4 pl-12">
+          <p className="text-white font-semibold opacity-95 w-[700px] my-4 pl-[60px]">
             our goal is to help for children who are in nedd and without help of{" "}
             you we dont think that we reach to this target our goal is to help
             for children who are in nedd and without help of you we dont think
@@ -82,12 +82,12 @@ function MainMenu() {
             this target{" "}
           </p>
           <Link to="/bank">
-            <button className=" mt-2    h-8 text-black hover:bg-sky-700  ml-12 bg-accent-2">
+            <button className=" mt-2  w-28  h-8 text-black hover:bg-sky-700  ml-[60px] bg-accent-2">
               Donate Now
             </button>
           </Link>
         </div>
-        <div className=" absolute right-10  top-2">
+        <div className=" absolute right-[60px]  top-2">
           <div className="w-72 mb-4  h-48 bg-backgorund ">
             {" "}
             <img
@@ -166,7 +166,7 @@ function MainMenu() {
         </h1>
       </div>
       <div className="flex flex-row px-16">
-        <div className=" w-1/2   border  border-l-slate-500    flex h-80 mb-">
+        <div className=" w-1/2   border    flex h-80 mb-">
           <img
             src="Telegram/image.jpg"
             className="w-76 ml-8 mt-6 h-60"
@@ -181,7 +181,7 @@ function MainMenu() {
             </p>
           </div>
         </div>{" "}
-        <div className=" w-1/2 flex-row space-x-10 border  border-r-slate-500   flex h-80 mb-2 ml-2">
+        <div className=" w-1/2 flex-row space-x-10 border     flex h-80 mb-2 ml-2">
           <img
             src="Telegram/image.jpg"
             className="w-76 ml-8 mt-6 h-60"
@@ -198,7 +198,7 @@ function MainMenu() {
         </div>
       </div>
       <div className="flex flex-row px-16">
-        <div className=" w-1/2  space-x-10 border  border-l-slate-500    flex h-80 mb-">
+        <div className=" w-1/2  space-x-10 border      flex h-80 mb-">
           <img
             src="Telegram/image.jpg"
             className="w-76 ml-8 mt-6 h-60"
@@ -213,7 +213,7 @@ function MainMenu() {
             </p>
           </div>
         </div>{" "}
-        <div className=" w-1/2 flex-row space-x-10 border  border-r-slate-500  ml-2 flex h-80 mb-10">
+        <div className=" w-1/2 flex-row space-x-10 border    ml-2 flex h-80 mb-10">
           <img
             src="Telegram/image.jpg"
             className="w-76 ml-8 mt-6 h-60"
@@ -393,20 +393,20 @@ function MainMenu() {
       </div>
 
       <div className="w-full h-44 relative bg-accent-2">
-        <h1 className="text-2xl absolute top-10 left-8  font-bold">
+        <h1 className="text-2xl absolute top-10 left-[60px]  font-bold">
           Get Every Week Update
         </h1>
 
-        <p className="w-72 absolute top-20 left-8 font-semibold ">
+        <p className="w-72 absolute top-20 left-[60px] font-semibold ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem,
         </p>
-        <div className="absolute ml-60 top-16  left-96">
+        <div className="absolute ml-[430px] top-16  left-96">
           <input
             placeholder="Email"
             type="email"
-            className="h-12 pl-4 border border-black w-80 bg-white"
+            className="h-12 pl-4 rounded-sm border border-black w-80 bg-white"
           />
-          <button className="bg-accent-3 w-36 h-12 ml-2 text-white">
+          <button className="bg-accent-3 w-36 rounded-sm hover:bg-accent-2 hover:text-black hover:border-spacing-2 h-12 ml-2 text-white">
             Subscribe Me
           </button>
         </div>

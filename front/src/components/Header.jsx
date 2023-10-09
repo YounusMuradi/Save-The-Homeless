@@ -13,7 +13,7 @@ function Header() {
           <a href="#" className="flex items-center ">
             <a
               href="#"
-              className="text-black  hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-semibold  rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+              className="text-black ml-10    focus:ring-gray-300 font-semibold  rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
             >
               SAVE THE <br /> HOMELESS
             </a>
@@ -23,19 +23,28 @@ function Header() {
               href="#"
               className="text-gray-800 dark:text-block  hover:bg-backgorund font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2"
             >
-              <select name="long" className=" bg-backgorund" id="long">
+              <select
+                name="long"
+                className=" hover:bg-accent-2  bg-backgorund"
+                id="long"
+              >
                 English
                 <option value="English">English</option>
                 <option value="Dari">Pashto</option>
                 <option value="Pashto">Pashto</option>
               </select>
             </a>
-
             <Link
               to="/signup"
-              className="text-black hover:bg-slate-400  font-medium rounded-lg text-sm px-4 lg:px-5 py-2  mr-2 "
+              className="text-black hover:bg-accent-2  font-medium rounded-lg text-sm  lg:px-5 py-2  mr-2 "
             >
               Sign up
+            </Link>{" "}
+            <Link
+              to="/login"
+              className="text-black hover:bg-accent-2  font-medium rounded-lg text-sm px-4 lg:px-5 py-2  mr-2 "
+            >
+              Log in
             </Link>
           </div>
           <div
@@ -47,7 +56,7 @@ function Header() {
                 <Link to="/">
                   <a
                     href="#"
-                    className="block py-2 pr-4 pl-3 text-black font-semibold rounded hover:text-orange-300  lg:bg-transparent  lg:p-0 "
+                    className="block py-2 pr-4 pl-3 text-black font-semibold hover:bg-accent-2  roundedhover:bg-accent-2   lg:bg-transparent  lg:p-0 "
                     aria-current="page"
                   >
                     Home
@@ -57,7 +66,7 @@ function Header() {
               <li>
                 <a
                   href="#"
-                  className="block py-2 pr-4 pl-3 text-black font-semibold rounded hover:text-orange-300  lg:bg-transparent  lg:p-0"
+                  className="block py-2 pr-4 pl-3 text-black font-semibold rounded hover:bg-accent-2   lg:bg-transparent  lg:p-0"
                 >
                   About Us
                 </a>
@@ -65,7 +74,7 @@ function Header() {
               <li>
                 <a
                   href="#here"
-                  className="block py-2 pr-4 pl-3 text-black font-semibold rounded hover:text-orange-300  lg:bg-transparent  lg:p-0"
+                  className="block py-2 pr-4 pl-3 text-black font-semibold rounded hover:bg-accent-2   lg:bg-transparent  lg:p-0"
                 >
                   Our Work
                 </a>
@@ -73,7 +82,7 @@ function Header() {
               <li>
                 <a
                   href="#"
-                  className="block py-2 pr-4 pl-3 text-black font-semibold rounded hover:text-orange-300  lg:bg-transparent  lg:p-0"
+                  className="block py-2 pr-4 pl-3 text-black font-semibold rounded hover:bg-accent-2  lg:bg-transparent  lg:p-0"
                 >
                   Bolog
                 </a>
@@ -82,7 +91,7 @@ function Header() {
                 <Link to="/signup">
                   <a
                     href="#"
-                    className="block py-2 pr-4 pl-3 text-black font-semibold rounded hover:text-orange-300  lg:bg-transparent  lg:p-0"
+                    className="block py-2 pr-4 pl-3 text-black font-semibold rounded hover:bg-accent-2   lg:bg-transparent  lg:p-0"
                   >
                     Be A Volenteer
                   </a>

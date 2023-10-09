@@ -12,7 +12,7 @@ function Login() {
       <section className="">
         <div>
           <div className=" flex  items-stretch justify-center  pt-12 pb-2  text-3xl font-bold text-true-gray-800">
-            Sign In
+            Log In
           </div>
           <br />
         </div>

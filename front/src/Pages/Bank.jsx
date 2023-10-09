@@ -20,9 +20,9 @@ function Bank() {
           </div>
         </div>
 
-        <div className=" w-4/4 mx-12 my-6 h-full border border-collapse border-black">
+        <div className=" w-4/4 mx-[60px] my-6  h-full border border-collapse border-black">
           <h1 className=" text-2xl pl-10 font-semibold  p-6">Local Back</h1>
-          <p className="pl-6 pb-4 font-semibold">
+          <p className="pl-8 pb-4 font-semibold">
             please note that if you chose to pay by local bank you <br />
             might have to provide us with bank slip
           </p>
@@ -38,7 +38,7 @@ function Bank() {
                 className={`h-40
               
                 w-96 border-text-color pt-3 ${
-                  page == 1 && "bg-accent-3"
+                  page == 1 && ""
                 } bg-accent-2 rounded-sm`}
               >
                 <Link to="/bankslip">

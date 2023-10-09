@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <div className=" relative">
       <div className="h-110 bg-cyan-700 w-full h-56  pt-6 grid grid-cols-5  sticky bottom-0 left-0    text-yellow-50 ">
-        <div className="text-yellow-50 pl-6 pt-4 ">
+        <div className="text-yellow-50 pl-[60px]  ">
           <p className="text-yellow-50  text-0.5xl">
             SAVE THE <br /> HOMELESS
           </p>{" "}
@@ -52,18 +53,17 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div>
-          <div className="h-40 w-40 bg-slate-50 mt-4 pt-4 pl-4 pr-4 mb-4 pb-8">
-            <p className="text-black text-xs">
+        <div className="ml-6 pl-4">
+          <div className="h-44 w-44 bg-slate-50 mt-2 pt-4 pl-7 pr-4 mb-4 pb-8">
+            <p className="text-black mt-4 font-bold text-xs">
               We Are Together For Beautiful World , Come Join Us Today <br />
             </p>
             <br />
-            <a
-              href="#"
-              className=" pt-8 text-white bg-amber-300	 hover:bg-blue-800   font-medium rounded-lg text-sm px-2 lg:px-3 py-2 lg:py-2.5 mr-2   focus:outline-none"
-            >
-              Donate Now
-            </a>
+            <Link to="/bank">
+              <button className=" mt-2  w-[120px]  h-8 text-black rounded-sm hover:bg-sky-700   bg-accent-2">
+                Donate Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>

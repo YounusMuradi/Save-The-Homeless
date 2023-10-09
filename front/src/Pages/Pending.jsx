@@ -20,7 +20,7 @@ function Pending() {
           <h1 className=" text-8xl  tex font-semibold  mr-20">
             Your request is
           </h1>
-          <h1 className=" text-8xl text-indigo-500 mr-24 mt-6">Pending</h1>
+          <h1 className=" text-8xl text-white mr-24 mt-6">Pending</h1>
           <span className=" px-96  mt-24  mr-24">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
             deserunt eveniet, dignissimos perspiciatis culpa veritatis harum,
