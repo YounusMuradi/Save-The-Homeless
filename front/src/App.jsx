@@ -14,12 +14,17 @@ import Doantate from "./components/Doantate";
 import MainMenu from "./Pages/MainMenu";
 import Donorlist from "./Pages/Donorlist";
 import View from "./Pages/View";
+<<<<<<< HEAD
 import Edit  from "./Pages/Edit";
 import Viewstudent from "./Pages/Viewstudent";
 import Editstudent from "./Pages/Editstudent";
 import TeacherList from "./Pages/TeacherList";
 import ViewTeacher from "./Pages/ViewTeacher";
 import EditTeacher from "./Pages/EditTeacher";
+=======
+import Edit from "./Pages/Edit";
+import Blog from "./Pages/Blog";
+>>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
 export default function App() {
   return (
     <>
@@ -32,6 +37,7 @@ export default function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/bankslip" element={<BankSlip />} />
         <Route path="/student" element={<StudentList />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/course" element={<Alcourse />} />
         <Route path="/login" element={<Login />} />
         <Route path="/pending" element={<Pending />} />
@@ -39,6 +45,7 @@ export default function App() {
         <Route path="/donar" element={<Donorlist />} />
         <Route path="/view/:id" element={<View />} />
         <Route path="/edit/:id" element={<Edit />} />
+<<<<<<< HEAD
         <Route path="/viewstudent/:id" element={<Viewstudent/>} />
         <Route path="/editstudent/:id" element={<Editstudent/>} />
         <Route path="/teacher" element={<TeacherList/>} />
@@ -53,6 +60,8 @@ export default function App() {
 
         
 
+=======
+>>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
       </Routes>
       {/* <Pending /> */}
       {/* <Login /> */}

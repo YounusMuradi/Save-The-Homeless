@@ -10,24 +10,27 @@ function Pending() {
     <div className="relative bg-backgorund">
       <Header />
       <section className=" mb-10 flex relative">
-        <div className=" flex  py-14 flex-row mr-32 mt-12  px-36  justify-between w-full">
-          <img className=" ml- w-80" src="Telegram/Frame 2.svg" alt="" />
+        <div className=" flex  py-14 flex-row mr-40 mt-12  px-16  justify-between w-full">
+          <img className="  w-80" src="Telegram/Frame 2.svg" alt="" />
 
           <img className=" w-80" src="Telegram/Angel1.svg" alt="" />
         </div>
 
-        <div className="absolute w-full flex pt-8  flex-col text-center justify-center ">
+        <div className="absolute w-full flex pt-10  flex-col text-center justify-center ">
           <h1 className=" text-8xl  tex font-semibold  mr-20">
             Your request is
           </h1>
-          <h1 className=" text-8xl text-indigo-500 mr-24 mt-6">Pending</h1>
-          <span className=" px-96  mt-24  mr-24">
+          <h1 className=" text-8xl text-white mr-24 mt-">
+            <img className="ml-96 mt-10" src="Telegram/Pending.svg" alt="" />
+          </h1>
+          <span className=" px-96  mt-2  mr-24">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
             deserunt eveniet, dignissimos perspiciatis culpa veritatis harum,
           </span>
           <br />
-
-          <button>contact us</button>
+          <button className=" mt-4  mx-auto w-36 rounded-sm h-10 text-white hover:bg-sky-700  bg-teal-950">
+            Donate Now
+          </button>{" "}
         </div>
       </section>
 

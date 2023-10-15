@@ -6,6 +6,7 @@ function Alcourse() {
   return (
     <div className="relative bg-backgorund ">
       <Header />
+
       <select
         name=""
         id=""
@@ -15,18 +16,83 @@ function Alcourse() {
         <option value=""></option>
         <option value=""></option>
       </select>
-      <section className="relative">
+      <section className="relative ">
         <div className="flex ml-64 space-x-4 mb mt-32">
           {" "}
-          <div className="w-64 border border-black h-96"></div>
-          <div className="w-64 border border-black h-96"></div>
-          <div className="w-64 border border-black h-96"></div>
+          <div className="w-72 border border-black h-[560px]">
+            <img className=" p-2 rounded-md" src="Telegram/math.jpg" alt="" />
+            <h1 className="pl-2 font-bold">Mathmathic</h1>
+            <p className="p-3 font-semibold">
+              If you are intersted to continue lesson in this part please follow
+              this course to a fututre for yourself.
+            </p>
+            <button className="border w-32 h-10 border-black m-3 font-bold ">
+              Go to Course
+            </button>
+          </div>
+          <div className="w-72 border border-black h-[560px]">
+            <img className=" p-2 rounded-md" src="Telegram/math.jpg" alt="" />
+            <h1 className="pl-2 font-bold">Mathmathic</h1>
+            <p className="p-3 font-semibold">
+              If you are intersted to continue lesson in this part please follow
+              this course to a fututre for yourself.
+            </p>
+            <button className="border w-32 h-10 border-black m-3 font-bold ">
+              Go to Course
+            </button>
+          </div>
+          <div className="w-72 border border-black h-[560px]">
+            <img className=" p-2 rounded-md" src="Telegram/math.jpg" alt="" />
+            <h1 className="pl-2 font-bold">Mathmathic</h1>
+            <p className="p-3 font-semibold">
+              If you are intersted to continue lesson in this part please follow
+              this course to a fututre for yourself.
+            </p>
+            <button className="border w-32 h-10 border-black m-3 font-bold ">
+              Go to Course
+            </button>
+          </div>
         </div>
-        <div className="flex ml-56 space-x-4 mt-6 mb-16">
+        <div className="flex ml-64 space-x-4 mt-6 mb-16">
           {" "}
-          <div className="w-64 border border-black h-96"></div>
-          <div className="w-64 border border-black h-96"></div>
-          <div className="w-64 border border-black h-96"></div>
+          <div className="w-72 border border-black h-[560px]">
+            <img
+              className=" p-2 h-[375px] rounded-md"
+              src="Telegram/computer.jpg"
+              alt=""
+            />
+            <h1 className="pl-2 font-bold">Computer</h1>
+            <p className="p-3 font-semibold">
+              If you are intersted to continue lesson in this part please follow
+              this course to a fututre for yourself.
+            </p>
+            <button className="border w-32 h-10 border-black m-3 font-bold ">
+              Go to Course
+            </button>
+          </div>
+          <div className="w-72 border border-black h-[560px]">
+            {" "}
+            <img className=" p-2 rounded-md" src="Telegram/math.jpg" alt="" />
+            <h1 className="pl-2 font-bold">Mathmathic</h1>
+            <p className="p-3 font-semibold">
+              If you are intersted to continue lesson in this part please follow
+              this course to a fututre for yourself.
+            </p>
+            <button className="border w-32 h-10 border-black m-3 font-bold ">
+              Go to Course
+            </button>
+          </div>
+          <div className="w-72 border border-black h-[560px]">
+            <img className=" p-2 rounded-md" src="Telegram/math.jpg" alt="" />
+            <h1 className="pl-2 font-bold">Mathmathic</h1>
+            <p className="p-3 font-semibold">
+              If you are intersted to continue lesson in this part please follow
+              this course to a fututre for yourself.
+            </p>
+            <button className="border w-32 h-10 border-black m-3 font-bold ">
+              Go to Course
+            </button>
+          </div>
         </div>
       </section>
 
