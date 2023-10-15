@@ -7,7 +7,6 @@ import axios from "axios";
 function SignUp() {
   // const [donar, donarLog] = useState(false);
   const [page, setPage] = useState(0);
-<<<<<<< HEAD
   const [loading, setLoading] = useState();
   //student
   
@@ -68,9 +67,8 @@ const onsubmit = async (e)=>{
 
   // donar
   const [donarField, setDonarField]= useState({
-=======
-  const [donarField, setDonarField] = useState({
->>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
+
+  
     fullname: "",
     email: "",
     password: "",
@@ -81,15 +79,11 @@ const onsubmit = async (e)=>{
       [e.target.name]: e.target.value,
     });
     console.log(donarField);
-<<<<<<< HEAD
+
   }
   
   const onSubmitchange = async (e)=>{
-=======
-  };
-  const [loading, setLoading] = useState();
-  const onSubmitchange = async (e) => {
->>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
+
     e.preventDefault();
     try {
       const response = await axios.post(
@@ -242,13 +236,13 @@ const onsubmit = async (e)=>{
             </form>
           )}
 
-<<<<<<< HEAD
+
 {/* //enddoar form */}
 
 {/* start of student form */}
-=======
+
           {/* //enddoar form */}
->>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
+
           {page == 2 && (
             <form action="" className=" bg-backgorund w-96">
               <input
@@ -279,13 +273,13 @@ const onsubmit = async (e)=>{
                 placeholder="Confirm Password"
               />
               <div className="flex flex-row   ">
-<<<<<<< HEAD
+
                 {/* <select
                   className="  bg-secondary h-12 border border-black rounded border-r-none  "
-=======
+
                 <select
                   className="  bg-secondary w-20 h-12 border border-black  border-r-0  "
->>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
+
                   name=""
                   id=""
                 >
@@ -296,13 +290,8 @@ const onsubmit = async (e)=>{
                 </select> */}
                 <input
                   type="number"
-<<<<<<< HEAD
                   className="block border border-black bg-backgorund mt-8border-black w-full p-3  rounded mb-1"
                   name="contact_number"
-=======
-                  className="block border border-black bg-backgorund border-l-0 w-full p-3  h-12 mb-1"
-                  name="confirm_password"
->>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
                   placeholder="contact us"
                   onChange={e=> Onstudenthandler(e)}
                 />
@@ -346,12 +335,9 @@ const onsubmit = async (e)=>{
               </div> */}
               <div className="flex flex-row mb-8 ">
                 <select
-<<<<<<< HEAD
+
                   className=" bg-backgorund  w-96 h-12 block rounded border border-black"
-=======
-                  className=" bg-backgorund p-3  w-96 h-12 block rounded border border-black"
-                  name=""
->>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
+
                   id=""
                   
                   value={studentField.typeOfassist}
@@ -369,13 +355,11 @@ const onsubmit = async (e)=>{
                 to="/creditC
               "
               >
-<<<<<<< HEAD
+
                 <button onClick={e=> Submitchange(e)} className="  mb-14 w-96  h-10 text-white hover:bg-sky-700  bg-teal-950  "
                 
                 >
-=======
-                <button className="  mb-14 w-96  h-10 text-white hover:bg-sky-700 rounded-sm bg-teal-950  ">
->>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
+
                   sign up
                 </button>
               </Link>
@@ -415,13 +399,13 @@ const onsubmit = async (e)=>{
                 placeholder="Confirm Password"
               />
               <div className="flex flex-row   ">
-<<<<<<< HEAD
+
                 {/* <select
                   className=" bg-secondary h-12 border border-black rounded border-r-none "
-=======
+
                 <select
                   className=" bg-secondary p-3 h-12 border border-black rounded border-r-none "
->>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
+
                   name=""
                   id=""
                 >
@@ -493,14 +477,7 @@ const onsubmit = async (e)=>{
               <Link to="/pending">
                 <button onClick={e=> onsubmit(e)} className="  mb-14 w-96  h-10 text-white hover:bg-sky-700  bg-teal-950  ">
                 {" "}
-=======
-              </div>
-              <Link
-                to="/pending
-              "
-              >
-                <button className="  mb-14 w-96  h-10 rounded-sm text-white hover:bg-sky-700  bg-teal-950  ">
->>>>>>> 6aa1677bd7f27627a923e5260332fcf04df25978
+
                   sign up
                 </button>
               </Link>
