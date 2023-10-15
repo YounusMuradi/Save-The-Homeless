@@ -14,7 +14,8 @@ import Doantate from "./components/Doantate";
 import MainMenu from "./Pages/MainMenu";
 import Donorlist from "./Pages/Donorlist";
 import View from "./Pages/View";
-import Edit  from "./Pages/Edit";
+import Edit from "./Pages/Edit";
+import Blog from "./Pages/Blog";
 export default function App() {
   return (
     <>
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/bankslip" element={<BankSlip />} />
         <Route path="/student" element={<StudentList />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/course" element={<Alcourse />} />
         <Route path="/login" element={<Login />} />
         <Route path="/pending" element={<Pending />} />
@@ -34,10 +36,6 @@ export default function App() {
         <Route path="/donar" element={<Donorlist />} />
         <Route path="/view/:id" element={<View />} />
         <Route path="/edit/:id" element={<Edit />} />
-
-
-        
-
       </Routes>
       {/* <Pending /> */}
       {/* <Login /> */}
