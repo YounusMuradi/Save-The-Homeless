@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
-function StudentList() {
+function TeacherList() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -13,7 +13,7 @@ function StudentList() {
     const fetchData = async () => {
       setLoading(true);
       const { data } = await axios.get(
-        'http://127.0.0.1:8000/api/students'
+        'http://127.0.0.1:8000/api/teachers'
       );
 
       
@@ -25,7 +25,7 @@ function StudentList() {
   }, []);
   const handleDelete =async(id)=>{
     console.log(id);
-    await axios.delete("http://127.0.0.1:8000/api/deletestudent/"+id);
+    await axios.delete("http://127.0.0.1:8000/api/deleteTeacher/"+id);
     const newstudentdata = data.filter((item)=>{
       return(
         item.id !==id
@@ -39,7 +39,7 @@ function StudentList() {
       <section className="">
         <div className="flex relative flex-row items-stretch justify-center  pt-12 pb-2 ">
           <div className="  text-3xl font-bold text-true-gray-800">
-            Students List
+            Teacher List
           </div>
           <br />
 
@@ -75,9 +75,7 @@ function StudentList() {
                       <th scope="col" class="px-6 py-4">
                         address
                       </th>
-                      <th scope="col" class="px-6 py-4">
-                        typeOfassist
-                      </th>
+                     
                       <th scope="col" class="px-6 py-4">
                         Action
                       </th>
@@ -94,11 +92,11 @@ function StudentList() {
                             <td class="whitespace-nowrap font-bold  px-6 py-4">{student.email}</td>
                             <td class="whitespace-nowrap font-bold  px-6 py-4">{student.contact_number}</td>
                             <td class="whitespace-nowrap font-bold  px-6 py-4">{student.address}</td>
-                            <td class="whitespace-nowrap font-bold  px-6 py-4">{student.typeOfassist}</td>
+                         
 
                             <td class="whitespace-nowrap font-bold  px-6 py-4">
-                            <Link to ={`/viewstudent/${student.id}`} className="btn btn-success mx-2">view</Link> 
-                            <Link to ={`/editstudent/${student.id}`} className="btn btn-info mx-2">edit</Link> 
+                            <Link to ={`/teacher/${student.id}`} className="btn btn-success mx-2">view</Link> 
+                            <Link to ={`/editteacher/${student.id}`} className="btn btn-info mx-2">edit</Link> 
                             <button onClick={()=>handleDelete(student.id)} className="btn btn-danger mx-2">delete</button> 
 
                             </td>
@@ -245,4 +243,4 @@ function StudentList() {
   );
 }
 
-export default StudentList;
+export default TeacherList;

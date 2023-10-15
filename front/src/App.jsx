@@ -15,6 +15,11 @@ import MainMenu from "./Pages/MainMenu";
 import Donorlist from "./Pages/Donorlist";
 import View from "./Pages/View";
 import Edit  from "./Pages/Edit";
+import Viewstudent from "./Pages/Viewstudent";
+import Editstudent from "./Pages/Editstudent";
+import TeacherList from "./Pages/TeacherList";
+import ViewTeacher from "./Pages/ViewTeacher";
+import EditTeacher from "./Pages/EditTeacher";
 export default function App() {
   return (
     <>
@@ -34,6 +39,16 @@ export default function App() {
         <Route path="/donar" element={<Donorlist />} />
         <Route path="/view/:id" element={<View />} />
         <Route path="/edit/:id" element={<Edit />} />
+        <Route path="/viewstudent/:id" element={<Viewstudent/>} />
+        <Route path="/editstudent/:id" element={<Editstudent/>} />
+        <Route path="/teacher" element={<TeacherList/>} />
+        <Route path="/teacher/:id" element={<ViewTeacher/>} />
+        <Route path="/editteacher/:id" element={<EditTeacher/>} />
+
+
+
+
+
 
 
         

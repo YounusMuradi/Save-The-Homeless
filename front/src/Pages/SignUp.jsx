@@ -5,8 +5,67 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 function SignUp() {
-  const [donar, donarLog] = useState(false);
+  // const [donar, donarLog] = useState(false);
   const [page, setPage] = useState(0);
+  const [loading, setLoading] = useState();
+  //student
+  
+  const [studentField, setstudentField] = useState({
+    fullname:"",
+    email:"",
+    password:"",
+    contact_number:"",
+    address:"",
+    typeOfassist:""
+    
+});
+  const Onstudenthandler = (e)=>{
+    const { name, value } = e.target;
+     setstudentField({
+      ...studentField,
+      // [e.target.name]: e.target.value
+      [name]:value
+  });
+    console.log(studentField);
+  }
+  const Submitchange = async (e)=>{
+    e.preventDefault();
+    try{
+      const res = await axios.post("http://127.0.0.1:8000/api/addstudent", studentField);
+      console.log(res);
+      setLoading(true);
+    }catch(err){
+      console.log("something went wrong");
+    }
+  }
+  //teacher
+  const [teacherField, setteacherFiled] = useState({
+    fullname:"",
+    email:"",
+    password:"",
+    contact_number:"",
+    address:""
+
+});
+const TeacherHandler = (e)=>{
+  setteacherFiled({
+    ...teacherField,
+    [e.target.name]: e.target.value
+  });
+  console.log(teacherField);
+}
+const onsubmit = async (e)=>{
+  e.preventDefault();
+  try{
+    const respon = await axios.post("http://127.0.0.1:8000/api/addteachers", teacherField);
+    console.log(respon);
+    setLoading(true);
+  }catch(err){
+    console.log("something went wrong");
+  }
+}
+
+  // donar
   const [donarField, setDonarField]= useState({
     fullname: "",
     email:"",
@@ -19,7 +78,7 @@ function SignUp() {
     });
     console.log(donarField);
   }
-  const [loading, setLoading] = useState();
+  
   const onSubmitchange = async (e)=>{
     e.preventDefault();
     try{
@@ -167,6 +226,8 @@ function SignUp() {
           )}
 
 {/* //enddoar form */}
+
+{/* start of student form */}
           {page == 2 && (
             <form action="" className=" bg-backgorund w-96">
               <input
@@ -174,19 +235,22 @@ function SignUp() {
                 className="block border bg-backgorund border-black w-full p-3 rounded mb-1"
                 name="fullname"
                 placeholder="Full Name"
-              />
+                onChange={e=> Onstudenthandler(e)}
+                />
               <input
                 type="text"
                 className="block border bg-backgorund border-black   w-full p-3 rounded mb-1"
                 name="email"
                 placeholder="Email"
-              />
+                onChange={e=> Onstudenthandler(e)}
+                />
               <input
                 type="password"
                 className="block border border-black bg-backgorund w-full p-3 rounded mb-1"
                 name="password"
                 placeholder="Password"
-              />
+                onChange={e=> Onstudenthandler(e)}
+                />
               <input
                 type="password"
                 className="block border  border-black bg-backgorund w-full p-3  rounded mb-8"
@@ -194,7 +258,7 @@ function SignUp() {
                 placeholder="Confirm Password"
               />
               <div className="flex flex-row   ">
-                <select
+                {/* <select
                   className="  bg-secondary h-12 border border-black rounded border-r-none  "
                   name=""
                   id=""
@@ -203,21 +267,23 @@ function SignUp() {
                   <option value="">93</option>
                   <option value="">93</option>
                   <option value="">93</option>
-                </select>
+                </select> */}
                 <input
                   type="number"
                   className="block border border-black bg-backgorund mt-8border-black w-full p-3  rounded mb-1"
-                  name="confirm_password"
+                  name="contact_number"
                   placeholder="contact us"
+                  onChange={e=> Onstudenthandler(e)}
                 />
               </div>
               <input
                 type="text"
                 className=" border  bg-backgorund w-full font-semibold border-black  p-3  rounded mb-1"
-                name="confirm_password"
+                name="address"
                 placeholder="Address NO(optional)"
+                onChange={e=> Onstudenthandler(e)}
               />
-              <div className="grid grid-cols-2 gap-1 ">
+              {/* <div className="grid grid-cols-2 gap-1 ">
                 <select
                   className=" bg-backgorund  h-12 block rounded  border border-black"
                   name=""
@@ -234,8 +300,8 @@ function SignUp() {
                   name="confirm_password"
                   placeholder="Zib Code"
                 />
-              </div>{" "}
-              <div className="flex flex-row mb-1 ">
+              </div>{" "} */}
+              {/* <div className="flex flex-row mb-1 ">
                 <select
                   className=" bg-secondary w-96 h-12 block rounded border border-black"
                   name=""
@@ -246,29 +312,38 @@ function SignUp() {
                   <option value="">city</option>
                   <option value="">city</option>
                 </select>
-              </div>
+              </div> */}
               <div className="flex flex-row mb-8 ">
                 <select
                   className=" bg-backgorund  w-96 h-12 block rounded border border-black"
-                  name=""
                   id=""
+                  
+                  value={studentField.typeOfassist}
+                  name="typeOfassist"
+                  onChange={e=>Onstudenthandler(e)}
                 >
-                  <option value="">How Do You Want to Be assisted?</option>
-                  <option value="">city</option>
-                  <option value="">city</option>
-                  <option value="">city</option>
+                  <option value="">How do you want to be assist</option>
+                  <option value="">Education</option>
+                  <option value="">Money</option>
+                  
                 </select>
               </div>
+              
               <Link
                 to="/creditC
               "
               >
-                <button className="  mb-14 w-96  h-10 text-white hover:bg-sky-700  bg-teal-950  ">
+                <button onClick={e=> Submitchange(e)} className="  mb-14 w-96  h-10 text-white hover:bg-sky-700  bg-teal-950  "
+                
+                >
                   sign up
                 </button>
               </Link>
             </form>
           )}
+{/* endstudent form */}
+
+{/* Teacher form */}
           {page == 3 && (
             <form action="" className=" bg-backgorund w-96">
               <input
@@ -276,18 +351,22 @@ function SignUp() {
                 className="block border bg-backgorund border-black w-full p-3 rounded mb-1"
                 name="fullname"
                 placeholder="Full Name"
+                onChange={e=> TeacherHandler(e)}
               />
               <input
                 type="text"
                 className="block border bg-backgorund border-black   w-full p-3 rounded mb-1"
                 name="email"
                 placeholder="Email"
+                onChange={e=> TeacherHandler(e)}
+               
               />
               <input
                 type="password"
                 className="block border border-black bg-backgorund w-full p-3 rounded mb-1"
                 name="password"
                 placeholder="Password"
+                onChange={e=> TeacherHandler(e)}
               />
               <input
                 type="password"
@@ -296,7 +375,7 @@ function SignUp() {
                 placeholder="Confirm Password"
               />
               <div className="flex flex-row   ">
-                <select
+                {/* <select
                   className=" bg-secondary h-12 border border-black rounded border-r-none "
                   name=""
                   id=""
@@ -305,21 +384,25 @@ function SignUp() {
                   <option value="">93</option>
                   <option value="">93</option>
                   <option value="">93</option>
-                </select>
+                </select> */}
                 <input
                   type="number"
                   className="block border border-black bg-backgorund mt-8border-black w-full p-3  rounded mb-1"
-                  name="confirm_password"
+                  name="contact_number"
                   placeholder="contact us"
+                  onChange={e=> TeacherHandler(e)}
+               
                 />
               </div>
               <input
                 type="text"
                 className="block border bg-backgorund w-full font-semibold border-black  p-3  rounded mb-1"
-                name="confirm_password"
+                name="address"
                 placeholder="Address NO(optional)"
+                onChange={e=> TeacherHandler(e)}
+                
               />
-              <div className="grid grid-cols-2 gap-1 ">
+              {/* <div className="grid grid-cols-2 gap-1 ">
                 <select
                   className=" bg-backgorund  h-12 block rounded  border border-black"
                   name=""
@@ -336,8 +419,8 @@ function SignUp() {
                   name="confirm_password"
                   placeholder="Zib Code"
                 />
-              </div>{" "}
-              <div className="flex flex-row mb-1 ">
+              </div>{" "} */}
+              {/* <div className="flex flex-row mb-1 ">
                 <select
                   className=" bg-backgorund  w-96 h-12 block rounded border border-black"
                   name=""
@@ -348,8 +431,8 @@ function SignUp() {
                   <option value="">city</option>
                   <option value="">city</option>
                 </select>
-              </div>
-              <div className="flex flex-row mb-8 ">
+              </div> */}
+              {/* <div className="flex flex-row mb-8 ">
                 <select
                   className=" bg-secondary w-96 h-12  rounded border border-black"
                   name=""
@@ -360,12 +443,10 @@ function SignUp() {
                   <option value="">city</option>
                   <option value="">city</option>
                 </select>
-              </div>
-              <Link
-                to="/pending
-              "
-              >
-                <button className="  mb-14 w-96  h-10 text-white hover:bg-sky-700  bg-teal-950  ">
+              </div> */}
+              <Link to="/pending">
+                <button onClick={e=> onsubmit(e)} className="  mb-14 w-96  h-10 text-white hover:bg-sky-700  bg-teal-950  ">
+                {" "}
                   sign up
                 </button>
               </Link>
